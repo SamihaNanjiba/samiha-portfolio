@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Samiha Nanjiba">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="assets/icons/samiha-ico-dark-500px-500px.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Bitter&amp;family=Licorice&amp;family=Merriweather&amp;display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="assets/styles/output.css">
+    
+    <title>Samiha Nanjiba | Software Engineer and Web Developer</title>
+
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- <div class="min-h-screen"> -->
+      <!--  dark:bg-onyx-950/50 for header -->
+      <!-- max-sm:px-4 -->
+    <header class="fixed w-full flex justify-between items-center lg:px-44 max-lg:px-10 bg-onyx-500/0 dark:bg-periwinkle-800/0 backdrop-blur-2xl z-10">
+      <div class="branding py-3">
+        <a href="/">
+          <!-- <img src="./assets/images/samiha-logo-500px-500px.png" alt="samiha-logo" id="" class="logo-light-mode hidden h-16 w-16"/> -->
+          <img src="./assets/images/samiha-logo-dark-500px-500px.png" alt="samiha-logo" class="logo-light-mode size-12 max-sm:size-8"/>
+        </a>
+      </div>
+      
+      <div class="nav-bar flex items-center gap-4">
+        <nav class="max-md:hidden flex gap-4">
+          <a href="#about">About</a>
+          <a href="#experiences">Experiences</a>
+          <a href="#education">Education</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <button type="button" class="toggleDarkMode flex justify-center items-center size-8 mx-3" onclick="toggleDarkMode()">
+          <img src="assets/images/moon-24px-24px.png" alt="switch to dark mode" class="to-dark-mode-icon hidden absolute size-5">
+          <img src="assets/images/sun-32px-32px.png" alt="switch to light mode" class="to-light-mode-icon hidden absolute size-8">
+        </button>
+
+        <div class="ham-menu md:hidden">
+          <button type="button" class="toggle-nav max-md:size-5 block" onclick="openCloseNav()">
+            <svg viewBox="-0.035 0.017 24.113 24.049" xmlns="http://www.w3.org/2000/svg">
+              <rect id="icon-top" class="transition-all duration-200" 
+                width="24.078" height="3.418" rx="1" ry="1" 
+                style="
+                  stroke: rgb(0, 0, 0); 
+                  stroke-linejoin: round; 
+                  stroke-linecap: round; 
+                  stroke-width: 0px; 
+                  fill: rgb(116, 142, 255);" 
+                y="2.104" 
+                transform="matrix(1, 0, 0, 1, -7.105427357601002e-15, 0)"
+              />
+              <rect id="icon-bottom" class="transition-all duration-200" 
+                width="24.078" height="3.418" rx="1" ry="1" 
+                style="stroke: rgb(0, 0, 0);
+                  stroke-linejoin: round; 
+                  stroke-linecap: round; 
+                  stroke-width: 0px; 
+                  fill: rgb(116, 142, 255);" 
+                x="-0.035" y="18.407" 
+                transform="matrix(1, 0, 0, 1, -7.105427357601002e-15, 0)"
+              />
+            </svg>
+            <svg>
+            </svg>
+          </button>
+          
+          <!--  -->
+          <nav id="nav-menu" class="fixed right-0 top-14 sm:top-[72px] flex flex-col gap-2 p-5 bg-periwinkle-400/80 dark:dark:bg-onyx-950/90 min-h-screen w-screen transition-all translate-x-full ease-in-out duration-200">
+            <h6><a href="#about">About</a></h6>
+            <h6><a href="#experiences">Experiences</a></h6>
+            <h6><a href="#education">Education</a></h6>
+            <h6><a href="#projects">Projects</a></h6>
+            <h6><a href="#contact">Contact</a></h6>
+          </nav>
+        </div>
+      </div>
+    </header>
+    
+    <div class="max-sm:px-6 bg-hero-gradient dark:bg-hero-gradient-dark-mode">
+      <section id="introduction" class="min-h-screen pt-12 max-sm:pt-14 flex flex-col items-center justify-center">
+        <img class="size-56 max-sm:size-44 my-5 drop-shadow-2xl" src="assets/images/avatar.svg" alt="avatar.png">
+        <h1 class="mt-10">Hi, I am Samiha</h1>
+        <p class="text-2xl max-sm:text-xl text-center">A Software Engineer</p>
+      </section>
+    </div>
+    
+    <div class="pb-36 max-sm:px-6 sm:container sm:mx-auto">
+      <!-- class="py-16" for sections -->
+      <section id="about" >
+        <div>
+          <h3>About Me</h3>
+          <p class="text-lg font-serif text-justify mx-auto">
+            Nice to meet you! I'm glad you found my website.
+            I am from Bangladesh, now living in Germany, following my passion for tech. <br>
+
+            <br>
+            When I am not working or building side projects, I usually enjoy spending 
+            time with my partner, cooking, reading, appreciating nature, and sometimes
+            movies, series and video games. <br>
+            
+            <br>
+            In case you are interested to know, my <strong>current read:</strong> Tomorrow and Tomorrow and Tomorrow
+          </p>
+        </div>
+        <br>
+
+        <div>
+          <h6>My Skills</h6>
+          <p class="text-lg font-serif mx-auto"><span><strong >Programming:</strong></span> JavaScript, TypeScript, Java, HTML, CSS
+          <p class="text-lg font-serif mx-auto"><span><strong >Database:</strong></span> SQL, NoSQL, MongoDB, MySQL
+          <p class="text-lg font-serif mx-auto"><span><strong >Tools and Frameworks:</strong></span> React, Vue.js, Tailwind CSS, Express, Node.js, Docker, Git, Terraform, Splunk
+          <p class="text-lg font-serif mx-auto"><span><strong >Languages:</strong></span> German(A1), English(C1), French(A2)
+          </p>
+        </div>
+
+        
+      </section>
+      <hr>
+
+      <section id="experiences">
+        <h3>Experiences</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="md:col-span-1">
+            <p class="font-semibold text-xl font-serif"><a href="https://www.goto.com/" target="_blank">GoTo Technologies Germany GmbH</a></p>
+            <p><em>Dresden, Germany</em></p>
+            <p>SEPT 2022 - SEPT 2023</p>
+          </div>
+          <div class="md:col-span-3">
+            <p class="font-bold text-xl font-serif">Working Student - Software Engineer</p>
+            <p class="text-lg font-serif">Intern - Software Engineer</p>
+            <ul class="text-justify">
+              <li>Designed and implemented a Feature Flag Management pipeline using an Infrastructure as Code (IaC) approach to solve limited user capacity and misconfiguration of Feature Flags, utilizing Terraform, LaunchDarkly and Jenkins</li>
+              <li>Enhanced the test client by implementing a global error handler, enforced stricter typing and object structure in the logging service, and introduced unit tests using Sinon.JS and Chai for robustness</li>
+              <li>Configured Splunk dashboards to analyze application logs using Splunk's Search Processing Language (SPL)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="md:col-span-1">
+            <p class="font-semibold text-xl font-serif"><a href="https://doctors-future.de/" target="_blank">doctorsFuture Gmbh</a></p>
+            <p><em>Dresden, Germany</em></p>
+            <p>OCT 2021 - AUG 2023</p>
+          </div>
+          <div class="md:col-span-3">
+            <p class="font-bold text-xl font-serif">Working Student (Web Development)</p>
+            <ul>
+              <li>Played an active role in developing the Front End of their landing page, utilizing Angular</li>
+              <li>Created various shared modules and components, which helped boost code reusability</li>
+              <li>Integrated the AuthGuard functionality in Angular, safeguarding access to critical areas such as the Admin Dashboard and other protected routes</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="md:col-span-1">
+            <p class="font-semibold text-xl font-serif"><a href="https://jence.com/" target="_blank">Jence Bangladesh</a></p>
+            <p><em>Dhaka, Bangladesh</em></p>
+            <p>MAY 2019 - JAN 2020</p>
+          </div>
+          <div class="md:col-span-3">
+            <p class="font-bold text-xl font-serif">Software Developer - R&D</p> 
+            <ul>
+              <li>Developed Java SWT-based GUI components for an RFID-based flagship ERP product</li>
+              <li>Ensured proper feature functionality and identified and resolved bugs</li>
+              <li>Constructed and fine-tuned SQL queries for database operations within the project</li>
+              <li>Contributed to the prototyping of a face recognition program using Java Native Interface (JNI) and Dlib, a C++ based toolkit</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="md:col-span-1">
+            <p class="font-semibold text-xl font-serif"><a href="https://gnrads.com/">GnR</a></p>
+            <p><em>Dhaka, Bangladesh</em></p>
+            <p class="font-serif">JAN 2017 - APR 2017</p>
+          </div>
+          <div class="md:col-span-3">
+            <div class="flex">
+              <p class="font-bold text-xl font-serif">Intern - Tech Department</p>
+            </div>
+            <p><em>Dhaka, Bangladesh</em></p>
+            <p>
+              A voluntary internship that I took on during my Bachelor studies. All the interns were divided into groups of 4-5 people. 
+              We then come up with an idea for an E-Pharmacy and developed an E-commerce site for it. 
+            </p>
+          </div>
+        </div>
+      </section>
+      <hr>
+
+      <section id="education">
+        <h3>Education</h3>
+
+        <div class="grid grid-cols-1 text-center max-sm:text-left">
+          <div class="md:col-span-1 py-5">
+            <p class="font-semibold text-xl font-serif">
+              <a href="https://tu-dresden.de/" target="_blank">
+                Technische Universität Dresden (TU Dresden)
+              </a>
+            </p>
+            <p class="text-lg">M.Sc. in Distributed Systems Engineering</p>
+            <p><em>Dresden, Germany</em></p>
+            <p>OCT 2020 - NOV 2023</p>
+          </div>
+
+          <div class="md:col-span-1 py-5">
+            <p class="font-semibold text-xl font-serif">
+              <a href="https://www.bracu.ac.bd/" target="_blank">
+                BRAC University 
+              </a>
+            </p>
+            <p class="text-lg">B.Sc. in Computer Science and Engineering</p>
+            <p><em>Dhaka, Bangladesh</em></p>
+            <p>JAN 2015 - APR 2019</p>
+          </div>
+          <!-- <div class="md:col-span-1">
+            <p class="font-bold text-xl font-serif">Working Student - Software Engineer</p>
+            <p class="text-lg">Intern - Software Engineer</p>
+            <ul class="text-justify">
+              <li>Designed and implemented a Feature Flag Management pipeline using an Infrastructure as Code (IaC) approach to solve limited user capacity and misconfiguration of Feature Flags, utilizing Terraform, LaunchDarkly and Jenkins</li>
+              <li>Enhanced the test client by implementing a global error handler, enforced stricter typing and object structure in the logging service, and introduced unit tests using Sinon.JS and Chai for robustness</li>
+              <li>Configured Splunk dashboards to analyze application logs using Splunk's Search Processing Language (SPL)</li>
+            </ul>
+          </div> -->
+        </div>
+
+      </section>
+      <hr>
+
+      <section id="projects">
+        <h3>My Projects</h3>
+        
+        <div class="py-5">
+          <p class="font-semibold text-xl font-serif">
+            <a href="https://inventory-tracker-tixq.onrender.com" title="CRUD MERN Inventory Tracker Project" target="_blank">
+              Inventory Tracking Web Application
+            </a>
+          </p>
+          <div>
+            <p>
+              A CRUD Web Application with a soft delete feature. This project was created using MERN Stack.
+            </p>
+          </div>
+        </div>
+        
+        <div class="py-5">
+          <p class="font-semibold text-xl font-serif">
+            <a href="https://bookstore-f0jr.onrender.com" title="CRUD Bookstore Project" target="_blank">
+              Bookstore
+            </a>
+          </p>
+          <div>
+            <p>
+              A CRUD Web Application created using MEVN Stack.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="py-10 text-onyx-500 text-center w-full dark:bg-onyx-950 bg-periwinkle-750">
+      <div class="md:container md:mx-auto">
+        <div id="contact" class="py-14">
+          <h6 class="my-5">Let's Connect!</h6>
+          <a class="mx-2" href="https://www.linkedin.com/in/samiha-nanjiba/" target="_blank">LinkedIn</a>
+          <a class="mx-2" href="https://github.com/SamihaNanjiba" target="_blank">GitHub</a>
+        </div>
+        <br>
+        <div class="copyright text-sm">
+          <p>
+            &copy Made by <a href="">Samiha</a> with <a href="https://tailwindcss.com/" title="Tailwind CSS" target="_blank">Tailwind CSS</a> | 
+            <script>document.write(new Date().getFullYear())</script>
+          </p>
+        </div>
+
+        <div class="attributions text-sm pt-7">
+          <p>
+            Icons collected from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">Flaticon</a> <br>
+            <a href="https://www.flaticon.com/free-icons/sunshine" title="sunshine icons" target="_blank">Light</a> 
+            and <a href="https://www.flaticon.com/free-icons/crescent-moon" title="crescent moon icons" target="_blank">Dark</a> Mode icons by 
+            <a href="https://www.flaticon.com/authors/juicy-fish" title="juicy_fish" target="_blank"> juicy_fish </a> 
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- </div> -->
+    
+    <script>
+
+      let toDarkModeIco = document.getElementsByClassName("to-dark-mode-icon");
+      let toLightModeIco = document.getElementsByClassName("to-light-mode-icon");
+      
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+
+        Array.from(toLightModeIco)
+        .forEach(element => {
+          element.classList.remove('hidden');
+        });
+      } else {
+        Array.from(toDarkModeIco).forEach(element => {
+          element.classList.remove('hidden');
+        });
+      }
+
+      function toggleDarkMode(params) {
+
+        // toggle icons inside button
+        Array.from(toDarkModeIco).forEach(element => {
+          element.classList.toggle('hidden');
+        });
+        Array.from(toLightModeIco).forEach(element => {
+          element.classList.toggle('hidden');
+        });
+
+        // if set via local storage previously
+        if ('theme' in localStorage) {
+          if (localStorage.theme === 'dark') {
+            document.documentElement.classList.remove('dark');
+            localStorage.theme = 'light';
+          } else {
+            document.documentElement.classList.add('dark');
+            localStorage.theme = 'dark';
+          }
+        } else {
+          if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.theme = 'light';
+          } else {
+            document.documentElement.classList.add('dark');
+            localStorage.theme = 'dark';
+          }
+        }
+      }
+
+      let navIconTop = document.getElementById("icon-top");
+      let navIconBottom = document.getElementById("icon-bottom");
+      let navToggleButton = document.getElementsByClassName("toggle-nav");
+      let navMenu = document.getElementById("nav-menu");
+      // console.log(navMenu[0].classList);
+
+      function openCloseNav() {
+        let navIconTopClassList = ["rotate-45", "scale-x-110", "translate-x-1.5"];
+        let navIconBottomClassList = ["origin-bottom-left", "-rotate-45", "scale-x-110", "translate-x-1.5"];
+
+        navMenu.classList.toggle("translate-x-full");
+
+        navIconTopClassList.forEach(elemClass => {
+          navIconTop.classList.toggle(elemClass);
+        });
+        navIconBottomClassList.forEach(elemClass => {
+          navIconBottom.classList.toggle(elemClass);
+        });
+      }
+      // Array.from(navIconTop.classList).forEach( elemClass => {
+      //   elemClass.toggle(")});
+      
+      // function openNav() {
+      //   document.getElementById("myNav").style.width = "100%";
+      // }
+      
+      // function closeNav() {
+      //   document.getElementById("myNav").style.width = "0%";
+      // }
+    </script>
+  </body>
+</html>
