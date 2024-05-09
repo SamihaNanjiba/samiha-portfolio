@@ -864,6 +864,10 @@ ul {
   gap: 1rem;
 }
 
+.\!scroll-smooth {
+  scroll-behavior: smooth !important;
+}
+
 .bg-onyx-500\/0 {
   background-color: rgb(248 248 248 / 0);
 }
@@ -1087,10 +1091,6 @@ ul {
 .dark\:bg-onyx-950:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(46 48 54 / var(--tw-bg-opacity));
-}
-
-.dark\:bg-onyx-950\/50:is(.dark *) {
-  background-color: rgb(46 48 54 / 0.5);
 }
 
 .dark\:bg-periwinkle-800\/0:is(.dark *) {
