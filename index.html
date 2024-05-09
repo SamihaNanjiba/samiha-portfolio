@@ -12,29 +12,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Bitter&amp;family=Licorice&amp;family=Merriweather&amp;display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="assets/styles/output.css">
     
     <title>Samiha Nanjiba | Software Engineer and Web Developer</title>
 
-    <script>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    </script>
+    <script src="scripts/darkModeInit.js"></script>
   </head>
 
   <body>
-    <!-- <div class="min-h-screen"> -->
-      <!--  dark:bg-onyx-950/50 for header -->
       <!-- max-sm:px-4 -->
     <header class="fixed w-full flex justify-between items-center lg:px-44 max-lg:px-10 bg-onyx-500/0 dark:bg-periwinkle-800/0 backdrop-blur-2xl z-10">
       <div class="branding py-3">
         <a href="/">
-          <!-- <img src="./assets/images/samiha-logo-500px-500px.png" alt="samiha-logo" id="" class="logo-light-mode hidden h-16 w-16"/> -->
           <img src="./assets/images/samiha-logo-dark-500px-500px.png" alt="samiha-logo" class="logo-light-mode size-12 max-sm:size-8"/>
         </a>
       </div>
@@ -82,7 +71,6 @@
             </svg>
           </button>
           
-          <!--  -->
           <nav id="nav-menu" class="fixed right-0 top-14 sm:top-[72px] flex flex-col gap-2 p-5 bg-periwinkle-400/80 dark:dark:bg-onyx-950/90 min-h-screen w-screen transition-all translate-x-full ease-in-out duration-200">
             <h6><a href="#about">About</a></h6>
             <h6><a href="#experiences">Experiences</a></h6>
@@ -233,15 +221,6 @@
             <p><em>Dhaka, Bangladesh</em></p>
             <p>JAN 2015 - APR 2019</p>
           </div>
-          <!-- <div class="md:col-span-1">
-            <p class="font-bold text-xl font-serif">Working Student - Software Engineer</p>
-            <p class="text-lg">Intern - Software Engineer</p>
-            <ul class="text-justify">
-              <li>Designed and implemented a Feature Flag Management pipeline using an Infrastructure as Code (IaC) approach to solve limited user capacity and misconfiguration of Feature Flags, utilizing Terraform, LaunchDarkly and Jenkins</li>
-              <li>Enhanced the test client by implementing a global error handler, enforced stricter typing and object structure in the logging service, and introduced unit tests using Sinon.JS and Chai for robustness</li>
-              <li>Configured Splunk dashboards to analyze application logs using Splunk's Search Processing Language (SPL)</li>
-            </ul>
-          </div> -->
         </div>
 
       </section>
@@ -303,84 +282,7 @@
         </div>
       </div>
     </footer>
-    <!-- </div> -->
     
-    <script>
-
-      let toDarkModeIco = document.getElementsByClassName("to-dark-mode-icon");
-      let toLightModeIco = document.getElementsByClassName("to-light-mode-icon");
-      
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-
-        Array.from(toLightModeIco)
-        .forEach(element => {
-          element.classList.remove('hidden');
-        });
-      } else {
-        Array.from(toDarkModeIco).forEach(element => {
-          element.classList.remove('hidden');
-        });
-      }
-
-      function toggleDarkMode(params) {
-
-        // toggle icons inside button
-        Array.from(toDarkModeIco).forEach(element => {
-          element.classList.toggle('hidden');
-        });
-        Array.from(toLightModeIco).forEach(element => {
-          element.classList.toggle('hidden');
-        });
-
-        // if set via local storage previously
-        if ('theme' in localStorage) {
-          if (localStorage.theme === 'dark') {
-            document.documentElement.classList.remove('dark');
-            localStorage.theme = 'light';
-          } else {
-            document.documentElement.classList.add('dark');
-            localStorage.theme = 'dark';
-          }
-        } else {
-          if (document.documentElement.classList.contains('dark')) {
-            document.documentElement.classList.remove('dark');
-            localStorage.theme = 'light';
-          } else {
-            document.documentElement.classList.add('dark');
-            localStorage.theme = 'dark';
-          }
-        }
-      }
-
-      let navIconTop = document.getElementById("icon-top");
-      let navIconBottom = document.getElementById("icon-bottom");
-      let navToggleButton = document.getElementsByClassName("toggle-nav");
-      let navMenu = document.getElementById("nav-menu");
-      // console.log(navMenu[0].classList);
-
-      function openCloseNav() {
-        let navIconTopClassList = ["rotate-45", "scale-x-110", "translate-x-1.5"];
-        let navIconBottomClassList = ["origin-bottom-left", "-rotate-45", "scale-x-110", "translate-x-1.5"];
-
-        navMenu.classList.toggle("translate-x-full");
-
-        navIconTopClassList.forEach(elemClass => {
-          navIconTop.classList.toggle(elemClass);
-        });
-        navIconBottomClassList.forEach(elemClass => {
-          navIconBottom.classList.toggle(elemClass);
-        });
-      }
-      // Array.from(navIconTop.classList).forEach( elemClass => {
-      //   elemClass.toggle(")});
-      
-      // function openNav() {
-      //   document.getElementById("myNav").style.width = "100%";
-      // }
-      
-      // function closeNav() {
-      //   document.getElementById("myNav").style.width = "0%";
-      // }
-    </script>
+    <script src="scripts/scripts.js"></script>
   </body>
 </html>
