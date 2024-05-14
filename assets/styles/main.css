@@ -50,22 +50,7 @@
   hr {
     @apply w-10 border-dotted border-b-0 border-[6px] border-onyx-600 dark:border-onyx-850 mx-auto my-6 max-sm:my-5;
   }
-  /* tr {
-    @apply mb-64;
-  } */
-  /* td {
-    @apply py-5 align-baseline;
-  }
-  tr td:first-of-type {
-    @apply w-1/4;
-  }
-  tr td:nth-of-type(2) {
-    @apply pl-10 border-solid border-l-[1px] border-onyx-600 dark:border-onyx-850;
-  } */
   ul {
     @apply list-disc leading-loose list-inside
   }
-  /* ul li {
-    @apply leading-3
-  } */
 }
